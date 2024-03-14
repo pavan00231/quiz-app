@@ -1,0 +1,44 @@
+// Define variables
+$primary-color: #738f9e;
+$secondary-color: #738f9e;
+$line-spacing: 1.2;
+$padding-vertical: 20px;
+$padding-horizontal: 0px;
+$min-height: 40px;
+
+// Define mixins
+@mixin center {
+  width: 100%;
+  text-align: center;
+}
+
+@mixin auto-margin {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Main table styles
+.th_table_leadboard {
+  letter-spacing: 2px;
+  line-height: $line-spacing;
+  padding: $padding-vertical $padding-horizontal;
+  color: $primary-color;
+  font-weight: normal;
+}
+
+// Leadboard container styles
+.leadboard_div {
+  @include center;
+}
+
+// Leadboard main container styles
+.leadboard_div_main {
+  @include auto-margin;
+}
+
+// Table row styles
+.tr_body {
+  min-height: $min-height;
+  height: $min-height;
+}

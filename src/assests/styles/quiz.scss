@@ -1,0 +1,692 @@
+// Define variables
+$navbar-color: #0e141e;
+$secondary-color: #738f93;
+$sidebar-width: 4%;
+$header-height: 65px;
+$mobile-breakpoint: 590px;
+
+
+// Define variables
+$primary-color: white;
+$success-color: green;
+$error-color: red;
+$button-width: 180px;
+$button-height: 50px;
+$button-gap: 15px;
+$button-margin: 15px;
+// Define mixins
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+}
+
+// Main header styles
+.main_header {
+  display: flex;
+  width: 100%;
+  height: $header-height;
+  background: $navbar-color;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Sidebar styles
+.sidebar {
+  transform: translate3d(0px, 0px, 0px);
+  text-align: center;
+  width: $sidebar-width;
+  border-radius: 1px;
+  border-top: 0px;
+  overflow: auto;
+  height: calc(100vh - #{$header-height});
+  position: relative;
+  border-bottom: 0px;
+
+  @include scrollbar; // Use scrollbar mixin
+}
+// Define variables
+$sidebar-item-height: 45px;
+$sidebar-item-width: 52px;
+$sidebar-h2-width: 49px;
+$primary-color: #738f93;
+$box-shadow-color: #747474;
+
+// Define mixins
+@mixin sidebar-item {
+  width: $sidebar-item-width;
+  height: $sidebar-item-height;
+  font-size: 1.2em;
+  font-weight: 500;
+  background: white;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Main styles
+.sidebar_selected {
+  @include sidebar-item;
+  box-shadow: 0px 0px 11px $box-shadow-color;
+}
+
+.sidebar_h2 {
+  width: $sidebar-h2-width;
+  @include sidebar-item;
+  color: $primary-color;
+}
+
+
+// Define variables
+$sidebar-bg-color: white;
+$sidebar-shadow-color: #747474;
+$sidebar-text-color: #738f93;
+$sidebar-item-height: 45px;
+$sidebar-item-width: 100%;
+$scrollbar-thumb-color: #ccc;
+$scrollbar-track-color: #f1f1f1;
+
+// Define mixins
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-color;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scrollbar-track-color;
+  }
+}
+
+// Sidebar selected item styles
+.sidebar_selected, .sidebar_h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  background: $sidebar-bg-color;
+  margin-top: 0;
+  margin-bottom: 10px;
+  height: $sidebar-item-height;
+  width: $sidebar-item-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar_selected {
+  box-shadow: 0 0 11px $sidebar-shadow-color;
+}
+
+.sidebar_h2 {
+  color: $sidebar-text-color;
+}
+
+// Sidebar scrollbar styles
+.sidebar {
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  @include scrollbar; // Use scrollbar mixin
+}
+
+// Define variables
+$h3-font-color: white;
+$img-div-width: 30%;
+$img-div-height: 100%;
+$img-div-gap: 20px;
+
+// Define mixins
+@mixin flex-row-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+// H3 font styles
+.h3_font {
+  color: $h3-font-color;
+  font-weight: 400;
+}
+
+// Image div styles
+.img_div {
+  width: $img-div-width;
+  height: $img-div-height;
+  @include flex-row-start; // Use flex-row-start mixin
+  gap: $img-div-gap;
+}
+
+// Image class styles
+.img_class {
+  height: 100%;
+}
+
+// Header div2 styles
+.header_div2 {
+  width: 30%;
+  text-align: center;
+}
+
+
+// Define variables
+$header-div3-width: 45%;
+$header-div3-margin-right: 17px;
+$sidebar-div1-width: 100%;
+$quiz-div2-width: 96%;
+$quiz-div2-shadow-color: rgba(0, 0, 0, 0.1); 
+// $quiz-div2-shadow-color: rgb(0 0 0 / 10%);
+
+// Define mixins
+@mixin boxShadow($shadow-color) {
+  box-shadow: 0 3px 10px 0 $shadow-color;
+}
+
+// Header div3 styles
+.header_div3 {
+  width: $header-div3-width;
+  text-align: end;
+  margin-right: $header-div3-margin-right;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 25px;
+}
+
+// Sidebar div1 styles
+.sidebar_div1 {
+  transform: translate3d(0px, 0px, 0px);
+  width: $sidebar-div1-width;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// Quiz div2 styles
+.quiz_div2 {
+  width: $quiz-div2-width;
+  @include boxShadow($quiz-div2-shadow-color); // Use boxShadow mixin
+}
+
+
+// Define variables
+$btn-bg-selected: #4a9d4a;
+$btn-bg-unselected: white;
+$btn-text-selected: white;
+$btn-text-unselected: black;
+$btn-border-color: black;
+$btn-border-radius: 4px;
+$btn-max-width: 100%;
+$btn-width: 30%;
+$btn-height: 50px;
+$btn-font-size: 1.1rem;
+$btn-font-weight: 300;
+$btn-margin-bottom: 15px;
+
+// Define mixins
+@mixin button-styles {
+  border: 1px solid $btn-border-color;
+  border-radius: $btn-border-radius;
+  max-width: $btn-max-width;
+  width: $btn-width;
+  height: $btn-height;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  margin-bottom: $btn-margin-bottom;
+}
+
+// Styles for .choose_one and .btn_div
+.choose_one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%
+}
+
+// Button styles
+.opt_btn {
+  @include button-styles; // Use button-styles mixin
+}
+
+.selected_clr {
+  background: $btn-bg-selected;
+  color: $btn-text-selected;
+  border: none;
+}
+
+.undfined_selected_clr {
+  background: $btn-bg-unselected;
+  // color: $btn-text-selected;
+  // border: none;
+
+
+  // background: $btn-bg-unselected;
+  color: $success-color;
+  border: 1px solid $success-color;
+}
+
+.unselected_clr {
+  background: $btn-bg-unselected;
+  color: $btn-text-unselected;
+}
+
+.unselected_red_clr {
+  background: $btn-bg-unselected;
+  color: $error-color;
+  
+  border: 1px solid $error-color;
+}
+
+
+// Define mixins
+@mixin button-styles {
+  background: $primary-color;
+  color: $success-color;
+  border: 1px solid $success-color;
+}
+
+@mixin error-button-styles {
+  background: $primary-color;
+  color: $error-color;
+  border: 1px solid $error-color;
+}
+
+@mixin button-container-styles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  gap: $button-gap;
+  margin-left: $button-margin;
+  flex-direction: row;
+}
+
+// Selected correct answer styles
+.selected_correct_green {
+  @include button-styles;
+}
+
+// Selected incorrect answer styles
+.selected_clr_red {
+  @include error-button-styles;
+}
+
+// Next/Previous button styles
+.next_previous_button {
+  width: $button-width;
+  height: $button-height;
+}
+
+// Button container styles
+.btn_div_nav {
+  @include button-container-styles;
+}
+
+// Text alignment styles
+.txt_align {
+  text-align: center;
+  margin-left: $button-margin;
+  margin-bottom: 10px;
+  margin-right: $button-margin;
+}
+// Define variables
+$button-height: 55px;
+$button-width: 185px;
+$button-text-align: center;
+$result-div-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+$congrats-div-shadow: 3px 3px 14px rgba(157, 155, 155, 0.5);
+$scrollbar-thumb-color: #ccc;
+$scrollbar-track-color: #f1f1f1;
+
+// Define mixins
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-color;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scrollbar-track-color;
+  }
+}
+
+// Styles
+.txt_aln_center {
+  text-align: $button-text-align;
+}
+
+.retake_btn {
+  height: $button-height;
+  width: $button-width;
+}
+
+.flex_div_result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 0 15px;
+}
+
+.quiz_result_div {
+  width: 100%;
+  box-shadow: $result-div-shadow;
+}
+
+.cong_main_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 0 15px;
+  position: sticky;
+  width: 95%;
+  background: white;
+  box-shadow: $congrats-div-shadow;
+  top: 0;
+  transition: top 0.3s;
+}
+
+.overflow_scroll {
+  // overflow: auto;
+  // height: 70vh;
+
+  @include scrollbar; // Use scrollbar mixin
+}
+// Define variables
+$display-mob: none;
+
+// Define mixin for media queries
+@mixin mobile-display {
+  @media (max-width: 590px) {
+    display: $display-mob;
+  }
+}
+
+// Apply the mixin where needed
+.dispay_mob {
+  @include mobile-display;
+}
+
+
+// Rest of the styles...
+
+// Media queries
+
+// Define variables
+$medium-screen-min-width: 600px;
+$medium-screen-max-width: 750px;
+$header-div3-width: 50%;
+$header-div3-margin-right: 17px;
+$img-div-width: 30%;
+$img-div-gap: 10px;
+$sidebar-width: 10%;
+$quiz-div2-width: 90%;
+$txt-align-margin-left: 15px;
+$txt-align-margin-right: 10px;
+$txt-align-font-size: 14px;
+$txt-align-line-height: 1.4;
+$cong-main-div-width: 95%;
+$cong-main-div-gap: 25px;
+
+// Define media query mixin
+@mixin medium-screen {
+  @media (min-width: $medium-screen-min-width) and (max-width: $medium-screen-max-width) {
+    @content;
+  }
+}
+
+// Apply media query styles
+@include medium-screen {
+  .header_div3 {
+    width: $header-div3-width;
+    text-align: end;
+    margin-right: $header-div3-margin-right;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: $cong-main-div-gap;
+  }
+
+  .img_div {
+    width: $img-div-width;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: $img-div-gap;
+  }
+
+  .sidebar {
+    transform: translate3d(0px, 0px, 0px);
+    text-align: center;
+    width: $sidebar-width;
+    border-radius: 1px;
+    border-top: 0px;
+    overflow: auto;
+    height: calc(100vh - 70px);
+    position: relative;
+    border-bottom: 0px;
+  }
+
+  .quiz_div2 {
+    width: $quiz-div2-width;
+    box-shadow: rgba(0, 0, 0, 0.1); 
+    // box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
+  }
+
+  .txt_align {
+    text-align: center;
+    margin-left: $txt-align-margin-left;
+    margin-bottom: 10px;
+    margin-right: $txt-align-margin-right;
+    font-size: $txt-align-font-size;
+    line-height: $txt-align-line-height;
+  }
+
+  .dispay_mob {
+    display: none;
+  }
+
+  .cong_main_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: $cong-main-div-gap;
+    position: sticky;
+    width: $cong-main-div-width;
+    align-items: center;
+    background: white;
+    box-shadow: none;
+    padding: 0px;
+    top: 0;
+    transition: top 0.3s;
+  }
+}
+
+
+// Define variables
+$mobile-max-width: 590px;
+$font-size-handburger: 20px;
+$button-height: 30px;
+$button-width: 80px;
+$button-font-size: 11px;
+$button-cong-font-size: 20px;
+$button-save-font-size: 13px;
+$gap-size: 16px;
+
+// Define mixins
+@mixin media-query($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Styles for mobile screens
+@include media-query($mobile-max-width) {
+  .img_div {
+    width: 48%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .header_bar {
+    display: none;
+  }
+
+  .dispay_mob {
+    display: block;
+  }
+
+  .handburgur_style {
+    font-size: $font-size-handburger;
+    color: white;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .retake_btn {
+    height: $button-height;
+    width: $button-width;
+    font-size: $button-font-size;
+  }
+
+  .font-size-btn-cong {
+    font-size: $button-cong-font-size;
+  }
+
+  .font-size-btn-save {
+    font-size: $button-save-font-size;
+  }
+
+  .cong_main_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: $gap-size;
+    padding-left: 0;
+    padding-right: 0;
+    position: sticky;
+    align-items: center;
+    background: white;
+    box-shadow: none;
+    top: 0;
+    transition: top 0.3s;
+  }
+
+  
+}
+.dispay_mob{
+  display: none;
+}
+
+// Hide the popup menu by default
+.popup-menu {
+  display: none;
+  position: absolute;
+  top: 50px; // Adjust as needed
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  // Style the menu items
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    li {
+      margin-bottom: 10px;
+      
+    width: 91%;
+    text-align: center;
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Style the mobile menu toggle icon
+.mobile-menu-toggle {
+  display: none; // Hide on desktop
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+
+    // Show the toggle icon on mobile
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    width: 95%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  // Show the popup menu
+  .popup-menu {
+    display: block;
+    width: 95%;
+  }
+  .dispay_mob{
+    display: block;
+  }
+}
+
+
+
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+// Define fade-out transition
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}

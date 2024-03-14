@@ -1,0 +1,79 @@
+// Define variables
+$primary-color: green;
+$primary-border-color: green;
+$secondary-color: #9b9999;
+$shadow-color: #606060;
+
+// Define mixins
+@mixin media-query($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Main section container styles
+.section_main_div {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+  border-radius: 4px;
+  height: 55px;
+  align-items: center;
+  box-shadow: 0px 1px 11px $shadow-color;
+
+  // Styling for smaller screens
+  @include media-query(590px) {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Section heading styles
+.section_h3_div {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  color: $secondary-color;
+}
+
+// Solve button styles
+.solve_btn {
+  width: 150px;
+  height: 45px;
+  color: $primary-color;
+  border: 1px solid $primary-border-color;
+
+  // Styling for smaller screens
+  @include media-query(590px) {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+}
+
+// Width styles for smaller screens
+.width_280 {
+  width: 280px;
+
+  // Styling for smaller screens
+  @include media-query(590px) {
+    width: 145px;
+    font-size: 12px;
+  }
+}
+
+// Font weight styles
+.font_weight_400 {
+  font-weight: 400;
+
+  // Styling for smaller screens
+  @include media-query(590px) {
+    font-size: 12px;
+  }
+}

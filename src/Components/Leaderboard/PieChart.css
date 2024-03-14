@@ -1,0 +1,29 @@
+/* PieChart.css */
+.pie-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fff; /* Set a background color for the container */
+  }
+  
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Additional styling for better visualization */
+  .slice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-50%);
+  }
+  

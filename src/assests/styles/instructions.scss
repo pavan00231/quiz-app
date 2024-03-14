@@ -1,0 +1,130 @@
+// Define variables
+$primary-color: green;
+$primary-border-color: green;
+$secondary-color: black;
+
+// Define mixins
+@mixin media-query($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Paragraph styles
+p {
+  color: $secondary-color;
+}
+
+// Unordered list styles
+.ul_inst {
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+// Instruction paragraph with increased height
+.p_inst_inc_height {
+  line-height: 1.7;
+}
+
+// Button container styles
+.inst_btn_div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 35px;
+}
+
+// Start button styles
+.start_btn_main {
+  width: 160px;
+  height: 40px;
+  color: $primary-color;
+  border: 1px solid $primary-border-color;
+  border-radius: 4px;
+}
+
+// Container with width and padding
+.inst_width_padding {
+  width: 50%;
+  padding: 10px 20px 0px 20px;
+}
+
+// Remove border styles
+.remove_border {
+  border: none;
+}
+
+// Test duration container styles
+.test_dur {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+
+// Font weight styles
+.font_weight_400 {
+  font-weight: 400;
+}
+
+// Main instruction container styles
+.main_inst_div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Main instruction container for smaller screens
+.inst_main_div_1 {
+  display: flex;
+  flex-direction: row;
+
+  @include media-query(590px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Main instruction container for smaller screens
+.inst_main_div_1 {
+  display: flex;
+  flex-direction: row;
+
+  @include media-query(590px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Main instruction container for smaller screens
+.main_inst_div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include media-query(590px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Instruction container with width and padding for smaller screens
+.inst_width_padding {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-query(590px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
